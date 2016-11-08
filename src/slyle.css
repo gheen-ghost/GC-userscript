@@ -1,0 +1,9 @@
+.GS_output .ui-dialog-content{
+	height: calc(100% - 100px);
+	font-family: Consolas;
+}
+.GS_output thead td {font-weight: bold}
+.GS_output td {
+	border: 1px solid #72828b;
+	border-collapse: collapse;
+}
