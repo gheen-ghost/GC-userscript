@@ -1,5 +1,5 @@
 "use strict"
-var players=[],result={}
+var players=[],result={},
   rwct='<div id=main_dialog class="ui-outputpanel ui-widget GS_output"><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-shadow ui-draggable ui-overlay-visible" style="width: auto; height: auto; left: 713px; top: 15.5px; visibility: visible; z-index: 1005;" role=dialog aria-labelledby=dialog0_title aria-hidden=false aria-live=polite><div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top ui-draggable-handle"><span id=dialog0_title class=ui-dialog-title>Результаты обработки</span><a href=# class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" role=button><span class="ui-icon ui-icon-closethick"/></a></div><div class="ui-dialog-content ui-widget-content" style="height: auto;"><table><thead><tr><td>имя</td><td colspan=6>каналы</td></thead><tbody class=process_result_container></tbody></table></div><div class="ui-dialog-footer ui-widget-content"></div></div></div>',
   //rwcs='{{css_template}}',
   rwlt='<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>',
