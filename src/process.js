@@ -15,7 +15,7 @@ $("td[role=gridcell] span").each(function(i,v) {if(v.title.length)players.push(v
 //players=["Ackol0","Aleks222"];
 
 
-$.each(players, collectData);
+//$.each(players, collectData);
 
 //function sleep(ms) {return new Promise(function(resolve){setTimeout(resolve, ms)})}
 
@@ -29,13 +29,15 @@ $.each(players, collectData);
 //	else{collectData(players[gi])}
 //},10)
 
-function collectData(_,name){ //for script size optimization
+var counter=0,stopFlag=false;
+function collectData(name){ //for script size optimization
+if (stopFlag) return;
 
 if (!name.length || typeof(name)!="string") return; //do nothing if name is empty or not a string
 $.ajax({
   url:"http://chatmod.de.heroes-online.com/GIMPLI-ChatModWebsite/secure/main.faces",
   method: "post",
-  "async":false,
+  "async": true,
   headers: {	
 	"Accept": "application/xml, text/xml, */*; q=0.01", 
 	"Faces-Request": "partial/ajax",
@@ -85,7 +87,8 @@ $.ajax({
 	  }
       //})
   },
-  error: function(){}
+  error: function(){},
+  complete: function(){collectData(players[++counter])}
 })
 
 }

@@ -245,7 +245,7 @@ Banhammer.prototype.sendMail=function(subject, body) {
 		data: data,
 		success:function(_0,_1,x){console.log(x);
 			var color = x.responseXML.firstChild.firstChild.childNodes[1].firstChild.data.indexOf("Successfully sent") ? "green" : "red";
-			Banhammer.form.find(".mail_sent_result").css({"color":color});
+			Banhammer.form.find(".mail_sent_result").css({"color":color}); Banhammer.form.mail_success = (color == "red") ? false : true;
 		},
 		error:function(){alert("Запрос не был успешно обработан")}
 	});
@@ -288,7 +288,7 @@ Banhammer.prototype.ban=function(duration) {
 	  success:function(_0,_1,x){
 		console.log(x);
 		var color = x.responseXML.firstChild.firstChild.firstChild.firstChild.data.indexOf("Ban successful") ? "green" : "red";
-		Banhammer.form.find(".ban_result").css({"color":color});
+		Banhammer.form.find(".ban_result").css({"color":color}); Banhammer.form.ban_success = (color == "red") ? false : true;
 	  },
 		error:function(){alert("Запрос не был успешно обработан")}
 	})
