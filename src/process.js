@@ -90,5 +90,6 @@ $.ajax({
   error: function(){},
   complete: function(){collectData(players[++counter])}
 })
-
 }
+
+collectData(players[0]);
